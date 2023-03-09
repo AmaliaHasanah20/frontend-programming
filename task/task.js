@@ -4,7 +4,13 @@
  * Object memiliki property: name, age, major.
  * Note: Ubah var menggunakan JavaScript Modern.
  */
-var users;
+let users = [
+  {name: "Amalia Hasanah", age: 21, major: "Teknik Informatik"},
+  {name: "Fahri", age: 20, major: "Sistem Informasi"},
+  {name: "Dapa", age: 22, major: "Bisnis Digital"},
+  {name: "Ayyash", age: 23, major: "Ilmu Komputer"},
+  {name: "Aisyah", age: 24, major: "Management Komputer"},
+];
 
 /**
  * TODO 2
@@ -12,7 +18,11 @@ var users;
  * Hint: Gunakan for/for-of.
  * Note: Ubah function menggunakan arrow function.
  */
-function all() {}
+const all = () => {
+  for (const keys of users) {
+    console.log(keys);
+  }
+}
 
 /**
  * TODO 3
@@ -20,7 +30,9 @@ function all() {}
  * Hint: Gunakan method push.
  * Note: Ubah function menggunakan arrow function.
  */
-function store(user) {}
+const store = (user) => {
+  users.push(user);
+}
 
 /**
  * TODO 4.
@@ -28,7 +40,9 @@ function store(user) {}
  * Hint: re-assign array.
  * Note: Ubah function menggunakan arrow function.
  */
-function update(index, user) {}
+const update = (index, user) => {
+  users[index] = user;
+}
 
 /**
  * TODO 5.
@@ -36,7 +50,9 @@ function update(index, user) {}
  * Hint: Gunakan method splice.
  * Note: Ubah function menggunakan arrow function.
  */
-function destroy(index) {}
+const destroy = (index) => {
+  users.splice(index, 1);
+}
 
 /**
  * Function main.
@@ -61,6 +77,7 @@ const main = () => {
     major: "Informatics",
   };
   store(newUser);
+  all()
 
   /**
    * Test function update
@@ -73,13 +90,15 @@ const main = () => {
     major: "English",
   };
   update(editedIndex, editedUser);
+  all()
 
   /**
    * Test function destroy
    */
-  console.log("# Delete User: Nurul");
+  console.log("# Delete User: Intan");
   const deletedIndex = 2;
   destroy(deletedIndex);
+  all();
 };
 
 main();
